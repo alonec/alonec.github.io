@@ -6,21 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://alonec.github.io">
-  <title>java设计模式——装饰模式 | Alonec�Ĳ���</title>
+  <title>java设计模式——装饰模式 | Alonec</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1、概述： 动态地给一个对象添加一些额外的职责，就增加功能来说，装饰模式比生成子类更灵活。 原理：增加一个修饰类包裹原来的类，包裹的方式一般是通过在将原来的对象作为修饰类的构造函数的参数。装饰类实现新的功能，但是，在不需要用到新功能的地方，它可以直接调用原来的类中的方法。修饰类必须和原来的类有相同的接口。 好处： 使主功能和附加功能相分离，可独立扩展。 降低主功能和附加功能之间的耦合性。2、模式中">
 <meta name="keywords" content="�����,������,����Գ,���,����,c,c++&quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java设计模式——装饰模式">
-<meta property="og:url" content="https://alonec.github.io/2018/03/22/Decorator/index.html">
-<meta property="og:site_name" content="Alonec�Ĳ���">
+<meta property="og:url" content="https://alonec.github.io/2018/03/23/Decorator/index.html">
+<meta property="og:site_name" content="Alonec">
 <meta property="og:description" content="1、概述： 动态地给一个对象添加一些额外的职责，就增加功能来说，装饰模式比生成子类更灵活。 原理：增加一个修饰类包裹原来的类，包裹的方式一般是通过在将原来的对象作为修饰类的构造函数的参数。装饰类实现新的功能，但是，在不需要用到新功能的地方，它可以直接调用原来的类中的方法。修饰类必须和原来的类有相同的接口。 好处： 使主功能和附加功能相分离，可独立扩展。 降低主功能和附加功能之间的耦合性。2、模式中">
-<meta property="og:updated_time" content="2018-03-22T15:20:01.791Z">
+<meta property="og:image" content="http://img2.imgtn.bdimg.com/it/u=2912453591,661136757&fm=27&gp=0.jpg">
+<meta property="og:updated_time" content="2018-03-22T16:18:57.758Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java设计模式——装饰模式">
 <meta name="twitter:description" content="1、概述： 动态地给一个对象添加一些额外的职责，就增加功能来说，装饰模式比生成子类更灵活。 原理：增加一个修饰类包裹原来的类，包裹的方式一般是通过在将原来的对象作为修饰类的构造函数的参数。装饰类实现新的功能，但是，在不需要用到新功能的地方，它可以直接调用原来的类中的方法。修饰类必须和原来的类有相同的接口。 好处： 使主功能和附加功能相分离，可独立扩展。 降低主功能和附加功能之间的耦合性。2、模式中">
+<meta name="twitter:image" content="http://img2.imgtn.bdimg.com/it/u=2912453591,661136757&fm=27&gp=0.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="Alonec�Ĳ���" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Alonec" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -158,8 +160,8 @@
   
 
         
-        <a href="/2018/03/22/Decorator/" class="archive-article-date">
-  	<time datetime="2018-03-22T15:20:29.584Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-22</time>
+        <a href="/2018/03/23/Decorator/" class="archive-article-date">
+  	<time datetime="2018-03-22T16:19:18.953Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-23</time>
 </a>
         
       </header>
@@ -170,7 +172,7 @@
 <h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4><p>增加一个修饰类包裹原来的类，包裹的方式一般是通过在将原来的对象作为修饰类的构造函数的参数。装饰类实现新的功能，但是，在不需要用到新功能的地方，它可以直接调用原来的类中的方法。修饰类必须和原来的类有相同的接口。</p>
 <h4 id="好处："><a href="#好处：" class="headerlink" title="好处："></a>好处：</h4><ol>
 <li>使主功能和附加功能相分离，可独立扩展。</li>
-<li>降低主功能和附加功能之间的耦合性。<h2 id="2、模式中的角色"><a href="#2、模式中的角色" class="headerlink" title="2、模式中的角色"></a>2、模式中的角色</h2></li>
+<li>降低主功能和附加功能之间的耦合性。<h2 id="2、模式中的角色"><a href="#2、模式中的角色" class="headerlink" title="2、模式中的角色"></a>2、模式中的角色</h2><h4 id="类图："><a href="#类图：" class="headerlink" title="类图："></a>类图：</h4><img src="http://img2.imgtn.bdimg.com/it/u=2912453591,661136757&amp;fm=27&amp;gp=0.jpg" alt="image"></li>
 </ol>
 <p>　　2.1 抽象构建（Component）：定义一个抽象接口，用以给这些对象动态地添加职责。</p>
 <p>　　2.2 具体构建（ConcreteComponent)：定义一个具体的对象，也可以给这个对象添加一些职责。这个类是主功能类。</p>
@@ -198,7 +200,7 @@
 <h2 id="3、总结："><a href="#3、总结：" class="headerlink" title="3、总结："></a>3、总结：</h2><h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><ol>
 <li>比静态继承更灵活 与对象的静态继承相比，Decorator模式提供了更加灵活的向对象添加职责的方式，可以使用添加和分离的方法，用装饰在运行时刻增加和删除职责.</li>
 <li>降低主功能和附加功能之间的耦合性。</li>
-<li>降低了主功能类的复杂度，遵循了开闭原则。<h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4>功能太分散，产生许多看上去类似的小对象。<h4 id="适用情景："><a href="#适用情景：" class="headerlink" title="适用情景："></a>适用情景：</h4></li>
+<li>降低了主功能类的复杂度，遵循了开闭原则。<h4 id="适用情景："><a href="#适用情景：" class="headerlink" title="适用情景："></a>适用情景：</h4></li>
 <li>当需要为已有功能动态地添加更多功能时。</li>
 <li>类的核心功能无需改变，只是需要添加新的功能时。</li>
 </ol>
@@ -291,7 +293,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://alonec.github.io/2018/03/22/Decorator/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://alonec.github.io/2018/03/23/Decorator/" alt="微信分享二维码">
     </div>
 </div>
 
