@@ -6,18 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://alonec.github.io">
-  <title>Alonec</title>
+  <title>java集合之HashMap（JDK1.8） | Alonec</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="������Java��̨����ѧϰ">
+  <meta name="description" content="一、定义HashMap继承AbstractMap，实现了Map，Cloneable, Serializable接口。其中Map接口定义了键映射到值的规则，而AbstractMap类提供 Map 接口的骨干实现。 12public class HashMap&amp;lt;K,V&amp;gt; extends AbstractMap&amp;lt;K,V&amp;gt;    implements Map&amp;lt;K,V&amp;gt;,">
 <meta name="keywords" content="�����,������,����Գ,���,����,c,c++&quot;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Alonec">
-<meta property="og:url" content="https://alonec.github.io/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java集合之HashMap（JDK1.8）">
+<meta property="og:url" content="https://alonec.github.io/2018/04/04/HashMap/index.html">
 <meta property="og:site_name" content="Alonec">
-<meta property="og:description" content="������Java��̨����ѧϰ">
+<meta property="og:description" content="一、定义HashMap继承AbstractMap，实现了Map，Cloneable, Serializable接口。其中Map接口定义了键映射到值的规则，而AbstractMap类提供 Map 接口的骨干实现。 12public class HashMap&amp;lt;K,V&amp;gt; extends AbstractMap&amp;lt;K,V&amp;gt;    implements Map&amp;lt;K,V&amp;gt;,">
+<meta property="og:image" content="http://tech.meituan.com/img/java-hashmap/hashMap%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%9B%BE.png">
+<meta property="og:image" content="https://tech.meituan.com/img/java-hashmap/jdk1.7%E6%89%A9%E5%AE%B9%E4%BE%8B%E5%9B%BE.png">
+<meta property="og:image" content="https://tech.meituan.com/img/java-hashmap/hashMap%201.8%20%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95%E4%BE%8B%E5%9B%BE1.png">
+<meta property="og:image" content="https://tech.meituan.com/img/java-hashmap/hashMap%201.8%20%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95%E4%BE%8B%E5%9B%BE2.png">
+<meta property="og:image" content="https://tech.meituan.com/img/java-hashmap/jdk1.8%20hashMap%E6%89%A9%E5%AE%B9%E4%BE%8B%E5%9B%BE.png">
+<meta property="og:image" content="https://img-blog.csdn.net/20170820205050092?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdGlhbnl1eGluZ3h1YW4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-04-03T16:57:42.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Alonec">
-<meta name="twitter:description" content="������Java��̨����ѧϰ">
+<meta name="twitter:title" content="java集合之HashMap（JDK1.8）">
+<meta name="twitter:description" content="一、定义HashMap继承AbstractMap，实现了Map，Cloneable, Serializable接口。其中Map接口定义了键映射到值的规则，而AbstractMap类提供 Map 接口的骨干实现。 12public class HashMap&amp;lt;K,V&amp;gt; extends AbstractMap&amp;lt;K,V&amp;gt;    implements Map&amp;lt;K,V&amp;gt;,">
+<meta name="twitter:image" content="http://tech.meituan.com/img/java-hashmap/hashMap%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%9B%BE.png">
   
     <link rel="alternative" href="/atom.xml" title="Alonec" type="application/atom+xml">
   
@@ -145,16 +153,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-HashMap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-HashMap" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/04/HashMap/">java集合之HashMap（JDK1.8）</a>
+    <h1 class="article-title" itemprop="name">
+      java集合之HashMap（JDK1.8）
     </h1>
   
 
@@ -219,6 +225,37 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -226,16 +263,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/04/HashMap/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://alonec.github.io/2018/04/04/HashMap/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/23/Decorator/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java设计模式——装饰模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -255,106 +351,14 @@
 
 
 
-
   
-    <article id="post-Decorator" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/23/Decorator/">java设计模式——装饰模式</a>
-    </h1>
   
 
-        
-        <a href="/2018/03/23/Decorator/" class="archive-article-date">
-  	<time datetime="2018-03-22T16:19:18.953Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1、概述："><a href="#1、概述：" class="headerlink" title="1、概述："></a>1、概述：</h2><p> 动态地给一个对象添加一些额外的职责，就增加功能来说，装饰模式比生成子类更灵活。</p>
-<h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4><p>增加一个修饰类包裹原来的类，包裹的方式一般是通过在将原来的对象作为修饰类的构造函数的参数。装饰类实现新的功能，但是，在不需要用到新功能的地方，它可以直接调用原来的类中的方法。修饰类必须和原来的类有相同的接口。</p>
-<h4 id="好处："><a href="#好处：" class="headerlink" title="好处："></a>好处：</h4><ol>
-<li>使主功能和附加功能相分离，可独立扩展。</li>
-<li>降低主功能和附加功能之间的耦合性。<h2 id="2、模式中的角色"><a href="#2、模式中的角色" class="headerlink" title="2、模式中的角色"></a>2、模式中的角色</h2><h4 id="类图："><a href="#类图：" class="headerlink" title="类图："></a>类图：</h4><img src="http://img2.imgtn.bdimg.com/it/u=2912453591,661136757&amp;fm=27&amp;gp=0.jpg" alt="image"></li>
-</ol>
-<p>　　2.1 抽象构建（Component）：定义一个抽象接口，用以给这些对象动态地添加职责。</p>
-<p>　　2.2 具体构建（ConcreteComponent)：定义一个具体的对象，也可以给这个对象添加一些职责。这个类是主功能类。</p>
-<p>　　2.3 装饰类（Decorator): 装饰抽象类，继承了Component,从外类来扩展Component类的功能。</p>
-<p>　　2.4 具体装饰者（Decorator1,2,3)：负责给构建对象添加职责。附加功能类。</p>
-<h4 id="下面是具体代码实现："><a href="#下面是具体代码实现：" class="headerlink" title="下面是具体代码实现："></a>下面是具体代码实现：</h4><p>抽象构件类：装饰类的公共接口</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public<span class="built_in"> interface </span>Component &#123;  </span><br><span class="line">    void sampleOperation();  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>具体构件类（主功能类）：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteComponent</span> <span class="keyword">implements</span> <span class="title">Component</span></span>&#123;  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteComponent</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">          </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sampleOperation</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * 实现主功能</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        System.out.println(<span class="string">"ConcreteComponent"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>装饰类（所有附加功能类的父类）：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Decorator</span> <span class="keyword">implements</span> <span class="title">Component</span></span>&#123;  </span><br><span class="line">    <span class="keyword">protected</span> Component component;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Decorator</span><span class="params">(Component component)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">this</span>.component = component;<span class="comment">//component为对另一个类对象的引用  </span></span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Decorator</span><span class="params">()</span> </span>&#123;&#125;  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sampleOperation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * 实现附加功能</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        component.sampleOperation();  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>具体装饰类（附加功能类）：Decorator1</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Decorator1</span> <span class="keyword">extends</span> <span class="title">Decorator</span></span>&#123;  </span><br><span class="line">    public <span class="type">Decorator1</span>(<span class="type">Component</span> component) &#123;  </span><br><span class="line">        <span class="keyword">super</span>(component);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    public void sampleOperation() &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * 实现附加功能</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="type">System</span>.out.println(<span class="string">"Decorator1"</span>);  </span><br><span class="line">        component.sampleOperation();  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>具体装饰类（附加功能类）：Decorator2</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Decorator2</span> <span class="keyword">extends</span> <span class="title">Decorator</span> </span>&#123;  </span><br><span class="line">  </span><br><span class="line">    public <span class="type">Decorator2</span>(<span class="type">Component</span> component) &#123;  </span><br><span class="line">        <span class="keyword">super</span>(component);  </span><br><span class="line">          </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    public void sampleOperation() &#123;  </span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * 实现附加功能</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="type">System</span>.out.println(<span class="string">"Decorator2"</span>);  </span><br><span class="line">        component.sampleOperation();  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>具体装饰类（附加功能类）：Decorator3</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Decorator3</span> <span class="keyword">extends</span> <span class="title">Decorator</span></span>&#123;  </span><br><span class="line">  </span><br><span class="line">    public <span class="type">Decorator3</span>(<span class="type">Component</span> component) &#123;  </span><br><span class="line">        <span class="keyword">super</span>(component);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    public void sampleOperation() &#123;  </span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * 实现附加功能</span></span><br><span class="line"><span class="comment">        */</span>  </span><br><span class="line">        <span class="type">System</span>.out.println(<span class="string">"Decorator3"</span>);  </span><br><span class="line">        component.sampleOperation();  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>客户端：调用了Decorator1的sampleOperation()，实现了四个功能。</p>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDecorator</span> </span>&#123;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span>[] args) &#123;  </span><br><span class="line">        <span class="comment">//定义主功能类</span></span><br><span class="line">        ConcreteComponent c = <span class="keyword">new</span> <span class="type">ConcreteComponent</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//定义三个附加功能类。</span></span><br><span class="line">        Decorator1 d1 = <span class="keyword">new</span> <span class="type">Decorator3</span>(c);</span><br><span class="line">        Decorator2 d2 = <span class="keyword">new</span> <span class="type">Decorator2</span>(d1);</span><br><span class="line">        Decorator1 d3 = <span class="keyword">new</span> <span class="type">Decorator1</span>(d2);<span class="comment">//将三个功能都交给Decorator3</span></span><br><span class="line">        <span class="comment">//实现功能</span></span><br><span class="line">        d1.sampleOperation();</span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<p>Decorator3</p>
-<p>Decorator2</p>
-<p>Decorator1</p>
-<p>ConcreteComponent</p>
-<h2 id="3、总结："><a href="#3、总结：" class="headerlink" title="3、总结："></a>3、总结：</h2><h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><ol>
-<li>比静态继承更灵活 与对象的静态继承相比，Decorator模式提供了更加灵活的向对象添加职责的方式，可以使用添加和分离的方法，用装饰在运行时刻增加和删除职责.</li>
-<li>降低主功能和附加功能之间的耦合性。</li>
-<li>降低了主功能类的复杂度，遵循了开闭原则。<h4 id="适用情景："><a href="#适用情景：" class="headerlink" title="适用情景："></a>适用情景：</h4></li>
-<li>当需要为已有功能动态地添加更多功能时。</li>
-<li>类的核心功能无需改变，只是需要添加新的功能时。</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/23/Decorator/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -377,8 +381,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
