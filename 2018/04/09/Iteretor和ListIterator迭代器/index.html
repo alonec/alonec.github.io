@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://alonec.github.io">
-  <title>Archives: 2018 | Alonec</title>
+  <title>Iteretor和ListIterator迭代器 | Alonec</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="������Java��̨����ѧϰ">
+  <meta name="description" content="1.IteratorIterator接口定义了四个方法以及各个方法的功能，如果有类实现了这个接口，且实现了这些方法，这方法需要实现定义的功能，遵循这些规则： 　　(1).hasNext() 判断容器是否有下一个元素，有则返回true； 　　(2).next() 返回容器中的下一个元素； 　　(3).remove() 移除当前迭代器返回的最后一个元素。这个方法在每次调用next()方法之后只能调用一">
 <meta name="keywords" content="�����,������,����Գ,���,����,c,c++&quot;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Alonec">
-<meta property="og:url" content="https://alonec.github.io/archives/2018/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Iteretor和ListIterator迭代器">
+<meta property="og:url" content="https://alonec.github.io/2018/04/09/Iteretor和ListIterator迭代器/index.html">
 <meta property="og:site_name" content="Alonec">
-<meta property="og:description" content="������Java��̨����ѧϰ">
+<meta property="og:description" content="1.IteratorIterator接口定义了四个方法以及各个方法的功能，如果有类实现了这个接口，且实现了这些方法，这方法需要实现定义的功能，遵循这些规则： 　　(1).hasNext() 判断容器是否有下一个元素，有则返回true； 　　(2).next() 返回容器中的下一个元素； 　　(3).remove() 移除当前迭代器返回的最后一个元素。这个方法在每次调用next()方法之后只能调用一">
+<meta property="og:updated_time" content="2018-04-09T08:23:26.833Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Alonec">
-<meta name="twitter:description" content="������Java��̨����ѧϰ">
+<meta name="twitter:title" content="Iteretor和ListIterator迭代器">
+<meta name="twitter:description" content="1.IteratorIterator接口定义了四个方法以及各个方法的功能，如果有类实现了这个接口，且实现了这些方法，这方法需要实现定义的功能，遵循这些规则： 　　(1).hasNext() 判断容器是否有下一个元素，有则返回true； 　　(2).next() 返回容器中的下一个元素； 　　(3).remove() 移除当前迭代器返回的最后一个元素。这个方法在每次调用next()方法之后只能调用一">
   
     <link rel="alternative" href="/atom.xml" title="Alonec" type="application/atom+xml">
   
@@ -145,157 +146,236 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Iteretor和ListIterator迭代器" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Iteretor和ListIterator迭代器
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/09/Iteretor和ListIterator迭代器/" class="archive-article-date">
+
+        
+        <a href="/2018/04/09/Iteretor和ListIterator迭代器/" class="archive-article-date">
   	<time datetime="2018-04-09T08:27:34.515Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/09/Iteretor和ListIterator迭代器/">Iteretor和ListIterator迭代器</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-Iterator"><a href="#1-Iterator" class="headerlink" title="1.Iterator"></a>1.Iterator</h3><p>Iterator接口定义了四个方法以及各个方法的功能，如果有类实现了这个接口，且实现了这些方法，这方法需要实现定义的功能，遵循这些规则：</p>
+<p>　　(1).hasNext() 判断容器是否有下一个元素，有则返回true；</p>
+<p>　　(2).next() 返回容器中的下一个元素；</p>
+<p>　　(3).remove() 移除当前迭代器返回的最后一个元素。这个方法在每次调用next()方法之后只能调用一次；</p>
+<p>　　(4).Java 8 增加forEachRemaining方法，它可以实现对余下的所有元素执行指定的操作。</p>
+<h3 id="2-ListIterator"><a href="#2-ListIterator" class="headerlink" title="2.ListIterator"></a>2.ListIterator</h3><p>ListIterator在Iterator基础上提供了add、set、previous等对列表的操作，可以对集合进行向前遍历。但是ListIterator跟Iterator一样，仍是在原列表上进行操作。</p>
+<p>(1).hasNext() 向前遍历时，如果有下一个元素返回真。</p>
+<p>(2).next() 返回下一个元素的值，并将指针加1。</p>
+<p>(3).hasPrevious() 向相反方向遍历时，如果还有元素返回真。</p>
+<p>(4).previous() 返回上一个元素的值，并将指针前移1。</p>
+<p>(5).nextIndex() 返回此时调用next()方法时返回的元素的索引。</p>
+<p>(6).previousIndex() 返回此时调用previous()方法时返回的元素的索引。</p>
+<p>(7).remove() 移除最近一次调用next()或previous()方法返回的元素（可选）。</p>
+<p>(8).set(E e) 用元素e将如果此时调用next()或previous()方法返回的元素替换掉。</p>
+<p>(9).add(E e) 添加元素到此时调用next()返回的元素之前，或此时调用previous()返回的元素之后。</p>
+<h6 id="一．相同点"><a href="#一．相同点" class="headerlink" title="一．相同点"></a>一．相同点</h6><p>都是迭代器，当需要对集合中元素进行遍历不需要干涉其遍历过程时，这两种迭代器都可以使用。</p>
+<h6 id="二．不同点"><a href="#二．不同点" class="headerlink" title="二．不同点"></a>二．不同点</h6><ol>
+<li><p>使用范围不同，Iterator可以应用于所有的集合，Set、List和Map和这些集合的子类型。而ListIterator只能用于List及其子类型。</p>
+</li>
+<li><p>ListIterator有add方法，可以向List中添加对象，而Iterator不能。</p>
+</li>
+<li><p>ListIterator和Iterator都有hasNext()和next()方法，可以实现顺序向后遍历，但是ListIterator有hasPrevious()和previous()方法，可以实现逆向（顺序向前）遍历。Iterator不可以。</p>
+</li>
+<li><p>ListIterator可以定位当前索引的位置，nextIndex()和previousIndex()可以实现。Iterator没有此功能。</p>
+</li>
+<li><p>都可实现删除操作，但是ListIterator可以实现对象的修改，set()方法可以实现。Iterator仅能遍历，不能修改。</p>
+</li>
+</ol>
+<h4 id="下面对就ArrayList实现的Iterator进行分析"><a href="#下面对就ArrayList实现的Iterator进行分析" class="headerlink" title="下面对就ArrayList实现的Iterator进行分析"></a>下面对就ArrayList实现的Iterator进行分析</h4><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> class Itr implements Iterator&lt;E&gt; &#123;</span><br><span class="line">    <span class="built_in">int</span> <span class="built_in">cursor</span>;       <span class="comment">// 下一个将要被返回的元素的下标</span></span><br><span class="line">    <span class="built_in">int</span> lastRet = <span class="number">-1</span>; <span class="comment">// 上一个返回的元素的下标，-1代表这个元素不存在（还没有返回过）</span></span><br><span class="line">    <span class="built_in">int</span> expectedModCount = modCount;<span class="comment">//用来校验在使用iterator期间，是否存在非Iterator的操作对ArrayList进行了修改。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 防止生成符合构造方法（因为此处的Iterator是内部类）</span></span><br><span class="line">    Itr() &#123;&#125;</span><br><span class="line">    <span class="comment">//判断是否存在下一个对象元素</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">boolean</span> hasNext() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">cursor</span> != <span class="built_in">size</span>;  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 获取下一个元素 </span></span><br><span class="line">    @SuppressWarnings(<span class="string">"unchecked"</span>)</span><br><span class="line">    <span class="keyword">public</span> E next() &#123;</span><br><span class="line">        </span><br><span class="line">        checkForComodification();<span class="comment">// 校验在使用iterator期间，是否存在非Iterator的操作对ArrayList进行了修改。</span></span><br><span class="line">        <span class="built_in">int</span> i = <span class="built_in">cursor</span>;</span><br><span class="line">        <span class="keyword">if</span> (i &gt;= <span class="built_in">size</span>)  <span class="comment">// 比如一个size是8，i只能0-7。注意：size是指的元素的个数。所以不是数组越界异常</span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> NoSuchElementException();</span><br><span class="line">        <span class="keyword">Object</span>[] elementData = ArrayList.<span class="keyword">this</span>.elementData; <span class="comment">// 只是为了简化书写，不必在意</span></span><br><span class="line">        <span class="keyword">if</span> (i &gt;= elementData.length)  <span class="comment">// 如果 cursor &gt;= elementData.length。则代表发生了 fail-fast</span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ConcurrentModificationException();</span><br><span class="line">        <span class="built_in">cursor</span> = i + <span class="number">1</span>; <span class="comment">// 游标cursor 前移</span></span><br><span class="line">        <span class="keyword">return</span> (E) elementData[lastRet = i];  <span class="comment">// 返回元素</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 移除刚被返回的元素</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> remove() &#123;</span><br><span class="line">        <span class="keyword">if</span> (lastRet &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException();</span><br><span class="line">        checkForComodification();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ArrayList.<span class="keyword">this</span>.remove(lastRet); <span class="comment">// 移除刚被返回的元素</span></span><br><span class="line">            <span class="built_in">cursor</span> = lastRet;  <span class="comment">// cursor 后移</span></span><br><span class="line">            lastRet = <span class="number">-1</span>;      <span class="comment">// lastRet 后移</span></span><br><span class="line">            expectedModCount = modCount;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IndexOutOfBoundsException ex) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ConcurrentModificationException();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> forEachRemaining(Consumer&lt;? <span class="keyword">super</span> E&gt; action) &#123;</span><br><span class="line">        Objects.requireNonNull(action);</span><br><span class="line">        <span class="keyword">final</span> <span class="built_in">int</span> <span class="built_in">size</span> = ArrayList.<span class="keyword">this</span>.<span class="built_in">size</span>;</span><br><span class="line">        <span class="built_in">int</span> i = <span class="built_in">cursor</span>;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="built_in">size</span>) &#123;</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">Object</span>[] es = elementData;</span><br><span class="line">            <span class="keyword">if</span> (i &gt;= es.length)</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> ConcurrentModificationException();</span><br><span class="line">            <span class="keyword">for</span> (; i &lt; <span class="built_in">size</span> &amp;&amp; modCount == expectedModCount; i++)  <span class="comment">// 对余下的所有元素执行指定的操作</span></span><br><span class="line">                action.accept(elementAt(es, i));</span><br><span class="line">            <span class="comment">// update once at end to reduce heap write traffic  结束时更新一次以减少堆写入流量</span></span><br><span class="line">            <span class="built_in">cursor</span> = i;</span><br><span class="line">            lastRet = i - <span class="number">1</span>;</span><br><span class="line">            checkForComodification();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 校验在使用iterator期间，是否存在非Iterator的操作对ArrayList进行了修改</span></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">void</span> checkForComodification() &#123;</span><br><span class="line">        <span class="keyword">if</span> (modCount != expectedModCount)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ConcurrentModificationException();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="Iterator详细的解析："><a href="#Iterator详细的解析：" class="headerlink" title="Iterator详细的解析："></a>Iterator详细的解析：</h6><p>（1） 属性</p>
+<ol>
+<li>游标</li>
+</ol>
+<p>int cursor; 我们知道iterator是始终向前走的，就是这个游标始终在++的原因</p>
+<ol>
+<li><p>末尾标识</p>
+<p>int lastRe 标识了最后一个返回的元素的索引位置，-1代表这个元素不存在</p>
+</li>
+<li><p>操作数标识</p>
+<p>int expectedModCount = modCount;<br>这个非常重要，它用来校验在使用iterator期间，是否存在非Iterator的操作对ArrayList进行了修改。</p>
+</li>
+</ol>
+<p>（2）checkForComodification 方法</p>
+<p>这个方法很简单，但是可以看到在这个内部类中，几乎所有方法都在调用它。它所做的工作就是校验在使用iterator期间，是否存在非Iterator的操作对ArrayList进行了修改。</p>
+<p>在ArrayList中，有很多操作都修改了一个变量，modCount。每次进行操作，modCount都在++。前面一直不理解这个有什么用，在这看到了它的用意。Iterator的游标特性决定了它对ArrayList中元素在这一时刻的位置很敏感，如果当前游标在index位置，而有其他操作在index-1的位置上插入了一个元素，那么调用iterator的next()方法，返回的还是当前这个元素，这样就乱了。为了避免这个情况发生，需要在这个期间把ArrayList“锁住“。它并没有实现真正的锁，所以采用了这个校验的方式。</p>
+<p>（3）next()</p>
+<p>返回当前游标位置的元素，这里面第一个if判断的条件很有意思。因此游标前移，当移动到一个不存在数据的地方，它抛出了异常。而并没有返回null。这就是我们为什么在使用iterator的时候不能用（null==iterator.next())来判断的原因。而是在要每次循环开始的时候判断iterator.hasNext()。</p>
+<p>（4） remove()</p>
+<p>删除lastRe 所标识位置的元素。我们可以把它理解为当前元素。在try前面有一个校验，保证元素没有被改动过，要不就删错了。</p>
+<p>在try{}语句块中，首先删除了lastRe标识的元素，然后让游标指向了这个位置。我们知道在删除元素以后，这个位置有了新的元素，这样再次调用next()的时候不会出现空指针异常，更不会跳过一个元素。</p>
+<p>最后expectedModCount =modCount;这句相当于释放了锁。也是在表示，在Iterator的中，只有我能够去修改mod，别人动了就不行！就会发生fail-fast</p>
+<h4 id="ListIterator"><a href="#ListIterator" class="headerlink" title="ListIterator"></a>ListIterator</h4><p>ListIterator继承自Iterator，其实现基本是和Iterator相同的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">ListItr</span> <span class="keyword">extends</span> <span class="title">Itr</span> <span class="keyword">implements</span> <span class="title">ListIterator</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">// 带参数的构造器。可以指定迭代的起始位置</span></span><br><span class="line">    ListItr(<span class="keyword">int</span> index) &#123;    </span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        cursor = index;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasPrevious</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cursor != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">nextIndex</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cursor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">previousIndex</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cursor - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> E <span class="title">previous</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        checkForComodification();</span><br><span class="line">        <span class="keyword">int</span> i = cursor - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> NoSuchElementException();</span><br><span class="line">        Object[] elementData = ArrayList.<span class="keyword">this</span>.elementData;</span><br><span class="line">        <span class="keyword">if</span> (i &gt;= elementData.length)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ConcurrentModificationException();</span><br><span class="line">        cursor = i;</span><br><span class="line">        <span class="keyword">return</span> (E) elementData[lastRet = i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (lastRet &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException();</span><br><span class="line">        checkForComodification();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ArrayList.<span class="keyword">this</span>.set(lastRet, e);  <span class="comment">// 调用的是ArrayList的set方法</span></span><br><span class="line">        &#125; <span class="keyword">catch</span> (IndexOutOfBoundsException ex) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ConcurrentModificationException();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">        checkForComodification();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> i = cursor;</span><br><span class="line">            ArrayList.<span class="keyword">this</span>.add(i, e);  <span class="comment">// 调用的是ArrayList的add(int index, E element)方法，在cursor的后面插入元素</span></span><br><span class="line">            cursor = i + <span class="number">1</span>;</span><br><span class="line">            lastRet = -<span class="number">1</span>;</span><br><span class="line">            expectedModCount = modCount;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IndexOutOfBoundsException ex) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ConcurrentModificationException();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="hasNext和hasPrevious分析"><a href="#hasNext和hasPrevious分析" class="headerlink" title="hasNext和hasPrevious分析"></a>hasNext和hasPrevious分析</h6><ul>
+<li>int cursor；用来指示当前遍历到了什么位置。每次调用 next() 或 previous() 对该值做出相应的 递增或递减 操作，以此实现顺序迭代。</li>
+<li>当调用 hasNext() 方法时，判断 cursor 变量是否等于集合大小，如果不等于，说明后面还有元素可以正序迭代。 </li>
+<li>当调用 hasPrevious() 方法时，判断 cursor 变量是否小于 0 ，如果不等于，说明前面还有元素可以倒序迭代。 </li>
+</ul>
+<h4 id="for循环与迭代器的对比"><a href="#for循环与迭代器的对比" class="headerlink" title="for循环与迭代器的对比:"></a>for循环与迭代器的对比:</h4><p>效率上各有各的优势：</p>
+<ul>
+<li><p>ArrayList对随机访问比较快，而for循环中使用的get()方法，采用的即是随机访问的方法，因此在ArrayList里for循环快。</p>
+</li>
+<li><p>　LinkedList则是顺序访问比较快，Iterator中的next()方法采用的是顺序访问方法，因此在LinkedList里使用Iterator较快。</p>
+</li>
+<li><p>　主要还是要依据集合的数据结构不同的判断。
+　</p>
+<h4 id="迭代器的并发修改异常"><a href="#迭代器的并发修改异常" class="headerlink" title="迭代器的并发修改异常"></a>迭代器的并发修改异常</h4><p>此博文对此讲解的很简单明了：</p>
+</li>
+</ul>
+<p><a href="https://blog.csdn.net/yangqinghua1992/article/details/53497165" target="_blank" rel="noopener">https://blog.csdn.net/yangqinghua1992/article/details/53497165</a></p>
+<p><a href="https://blog.csdn.net/yangqinghua1992/article/details/53497165" target="_blank" rel="noopener">链接</a></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://alonec.github.io/2018/04/09/Iteretor和ListIterator迭代器/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/09/ArrayList/" class="archive-article-date">
-  	<time datetime="2018-04-09T08:25:11.625Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/09/ArrayList/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java集合之ArrayList（JDK1.9）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/09/ArrayList/">java集合之ArrayList（JDK1.9）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/05/HashMap_fail-fast/" class="archive-article-date">
-  	<time datetime="2018-04-05T02:23:04.386Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/05/HashMap_fail-fast/">HashMap的fail-fast机制</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/04/HashMap/" class="archive-article-date">
-  	<time datetime="2018-04-03T16:58:00.103Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/04/HashMap/">java集合之HashMap（JDK1.8）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/23/Decorator/" class="archive-article-date">
-  	<time datetime="2018-03-22T16:19:18.953Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/23/Decorator/">java设计模式——装饰模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -318,8 +398,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
