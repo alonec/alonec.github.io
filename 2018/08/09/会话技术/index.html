@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="Hexo, Java" />
 
 
 
@@ -87,18 +87,17 @@
 
 
 
-<meta name="description" content="static关键字的用途和常见笔试面试题的总结。">
-<meta name="keywords" content="java">
+<meta name="description" content="会话技术是帮助服务器	记住客户端状态（区分客户端）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java中的static关键字解析">
-<meta property="og:url" content="https://alonec.github.io/2018/05/20/java中的static关键字解析/index.html">
+<meta property="og:title" content="会话技术Cookie&amp;Session">
+<meta property="og:url" content="https://alonec.github.io/2018/08/09/会话技术/index.html">
 <meta property="og:site_name" content="陈浮生">
-<meta property="og:description" content="static关键字的用途和常见笔试面试题的总结。">
+<meta property="og:description" content="会话技术是帮助服务器	记住客户端状态（区分客户端）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-19T17:55:41.712Z">
+<meta property="og:updated_time" content="2018-07-14T10:22:19.097Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java中的static关键字解析">
-<meta name="twitter:description" content="static关键字的用途和常见笔试面试题的总结。">
+<meta name="twitter:title" content="会话技术Cookie&amp;Session">
+<meta name="twitter:description" content="会话技术是帮助服务器	记住客户端状态（区分客户端）">
 
 
 
@@ -128,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://alonec.github.io/2018/05/20/java中的static关键字解析/"/>
+  <link rel="canonical" href="https://alonec.github.io/2018/08/09/会话技术/"/>
 
 
 
 
 
-  <title>java中的static关键字解析 | 陈浮生</title>
+  <title>会话技术Cookie&Session | 陈浮生</title>
   
 
 
@@ -306,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://alonec.github.io/2018/05/20/java中的static关键字解析/">
+    <link itemprop="mainEntityOfPage" href="https://alonec.github.io/2018/08/09/会话技术/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈浮生">
@@ -323,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java中的static关键字解析</h1>
+          <h1 class="post-title" itemprop="name headline">会话技术Cookie&Session</h1>
         
 
         <div class="post-meta">
@@ -335,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T01:59:21+08:00">
-                2018-05-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-09T16:09:29+08:00">
+                2018-08-09
               </time>
             
 
@@ -358,8 +357,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/java-web/" itemprop="url" rel="index">
+                    <span itemprop="name">java/web</span>
                   </a>
                 </span>
 
@@ -376,9 +375,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/20/java中的static关键字解析/#comments" itemprop="discussionUrl">
+                <a href="/2018/08/09/会话技术/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/20/java中的static关键字解析/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/08/09/会话技术/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -405,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,577 字
+                  1,381 字
                 </span>
               
 
@@ -421,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  5
                 </span>
               
             </div>
@@ -429,7 +428,7 @@
 
           
               <div class="post-description">
-                  static关键字的用途和常见笔试面试题的总结。
+                  会话技术是帮助服务器	记住客户端状态（区分客户端）
               </div>
           
 
@@ -446,33 +445,80 @@
       
 
       
-        <h2 id="一、static关键字的用途"><a href="#一、static关键字的用途" class="headerlink" title="一、static关键字的用途"></a>一、static关键字的用途</h2><p>“static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途。”</p>
-<p>——《java编程思想》</p>
-<p>被static关键字修饰的方法或者变量不需要依赖于对象来进行访问，只要类被加载了，就可以通过类名去进行访问。这是static最主要的作用。</p>
-<p> static可以用来修饰类的成员方法、类的成员变量，另外可以编写static代码块来优化程序性能。</p>
-<h4 id="1-静态变量"><a href="#1-静态变量" class="headerlink" title="1.静态变量"></a>1.静态变量</h4><p>static变量也称作静态变量，静态变量和非静态变量的区别是：静态变量被所有的对象所共享，在内存中只有一个副本，它当且仅当在类初次加载时会被初始化。而非静态变量是对象所拥有的，在创建对象的时候被初始化，存在多个副本，各个对象拥有的副本互不影响。</p>
-<p>注意，java中规定，static只能修饰成员变量，而不能修饰局部变量。即方法中不能有static关键字存在。</p>
-<p><strong>static成员变量的初始化顺序按照定义的顺序进行初始化</strong>。</p>
-<h4 id="2-静态方法"><a href="#2-静态方法" class="headerlink" title="2.静态方法"></a>2.静态方法</h4><p>由于静态方法不依赖于任何对象就可以进行访问，因此对于静态方法来说，是没有this的，因为它不依附于任何对象，既然都没有对象，就谈不上this了。并且由于这个特性，在静态方法中不能访问类的非静态成员变量和非静态成员方法，因为非静态成员方法/变量都是必须依赖具体的对象才能够被调用。</p>
-<p>　　但是要注意的是，虽然在静态方法中不能访问非静态成员方法和非静态成员变量，但是在非静态成员方法中是可以访问静态成员方法/变量的。</p>
-<h4 id="3-静态块"><a href="#3-静态块" class="headerlink" title="3.静态块"></a>3.静态块</h4><p>static关键字还有一个比较好的作用就构建静态代码块以优化程序。static块可以置于类中的任何地方，类中可以有多个static块。在类初次被加载的时候，会按照static块的顺序来执行每个static块，并且只会执行一次。</p>
-<h2 id="二、常见笔试面试题"><a href="#二、常见笔试面试题" class="headerlink" title="二、常见笔试面试题"></a>二、常见笔试面试题</h2><p> 1.下面这段代码的输出结果？</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Test</span> <span class="title">extends</span> <span class="title">Base</span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"test static"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"test constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> Test();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> <span class="title">Base</span>&#123;</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"base static"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Base</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"base constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>程序执行过程：<br>首先在执行开始，要先找到main方法，因为main方法是程序的入口，但是在执行main方法之前，必须要先加载类Test，而加载类Test时，发现它继承类Base，所以又转而去先加载类Base，在Base中发现有static块，便执行了static块，然后回到Test，加载Test，同样的，执行了Test中的static块。在加载完类Test后，就开始执行main方法。在main方法中执行new Test()时，会先执行Test的父类Base的构造方法，然后在执行自己的构造方法。</p>
-<h6 id="输出结果为："><a href="#输出结果为：" class="headerlink" title="输出结果为："></a>输出结果为：</h6><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">base static</span><br><span class="line"> </span><br><span class="line"><span class="keyword">test </span>static</span><br><span class="line"></span><br><span class="line">base constructor</span><br><span class="line"></span><br><span class="line"><span class="keyword">test </span>constructor</span><br></pre></td></tr></table></figure>
+        <h1 id="一、会话技术简介"><a href="#一、会话技术简介" class="headerlink" title="一、会话技术简介"></a>一、会话技术简介</h1><h2 id="1．存储客户端的状态"><a href="#1．存储客户端的状态" class="headerlink" title="1．存储客户端的状态"></a>1．存储客户端的状态</h2><p>由一个问题引出今天的内容，例如网站的购物系统，用户将购买的商品信息存储到哪    里？因为Http协议是无状态的，也就是说每个客户访问服务器端资源时，服务器并    不知道该客户端是谁，所以需要会话技术识别客户端的状态。会话技术是帮助服务器    记住客户端状态（区分客户端）</p>
+<h2 id="2．会话技术"><a href="#2．会话技术" class="headerlink" title="2．会话技术"></a>2．会话技术</h2><p>从打开一个浏览器访问某个站点，到关闭这个浏览器的整个过程，成为一次会话。会    话技术就是记录这次会话中客户端的状态与数据的。<br>会话技术分为Cookie和Session：<br>Cookie：数据存储在客户端本地，减少服务器端的存储的压力，安全性不好，客户端    可以清除cookie<br>Session：将数据存储到服务器端，安全性相对好，增加服务器的压力</p>
+<h1 id="二、Cookie技术"><a href="#二、Cookie技术" class="headerlink" title="二、Cookie技术"></a>二、Cookie技术</h1><p>Cookie技术是将用户的数据存储到客户端的技术，我们分为两方面学习：</p>
+<p>第一，服务器端怎样将一个Cookie发送到客户端</p>
+<p>第二，服务器端怎样接受客户端携带的Cookie</p>
+<h2 id="1．服务器端向客户端发送一个Cookie"><a href="#1．服务器端向客户端发送一个Cookie" class="headerlink" title="1．服务器端向客户端发送一个Cookie"></a>1．服务器端向客户端发送一个Cookie</h2><h3 id="1）创建Cookie："><a href="#1）创建Cookie：" class="headerlink" title="1）创建Cookie："></a>1）创建Cookie：</h3><p>Cookie cookie = new Cookie(String cookieName,String cookieValue);</p>
+<p>示例：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Cookie cookie</span> = new Cookie(<span class="string">"username"</span>，<span class="string">"zhangsan"</span>);</span><br></pre></td></tr></table></figure>
+<p>那么该cookie会以响应头的形式发送给客户端：</p>
+<p><strong>注意：Cookie中不能存储中文</strong></p>
+<h3 id="2）设置Cookie在客户端的持久化时间："><a href="#2）设置Cookie在客户端的持久化时间：" class="headerlink" title="2）设置Cookie在客户端的持久化时间："></a>2）设置Cookie在客户端的持久化时间：</h3><p>cookie.setMaxAge(int seconds); —时间秒</p>
+<p>注意：如果不设置持久化时间，cookie会存储在浏览器的内存中，浏览器关闭    cookie信息销毁（会话级别的cookie），如果设置持久化时间，cookie信息会    被持久化到浏览器的磁盘文件里</p>
+<p>示例：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie.setMaxAge(<span class="number">30</span>*<span class="number">60</span>);</span><br></pre></td></tr></table></figure>
+<p>设置cookie信息在浏览器的磁盘文件中存储的时间是30分钟，时间到了，浏览器会自动删除该cookie信息</p>
+<h3 id="3）设置Cookie的携带路径："><a href="#3）设置Cookie的携带路径：" class="headerlink" title="3）设置Cookie的携带路径："></a>3）设置Cookie的携带路径：</h3><p>cookie.setPath(String path);</p>
+<p>注意：如果不设置携带路径，那么该cookie信息会在访问产生该cookie的    web资源所在的路径都携带cookie信息</p>
+<p>示例：</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie.setPath(<span class="string">"/WEB"</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>代表访问WEB应用中的任何资源都携带cookie</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie.setPath(<span class="string">"/WEB/cookieServlet"</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>代表访问WEB中的cookieServlet时才携带cookie信息</p>
+<h3 id="4）向客户端发送cookie："><a href="#4）向客户端发送cookie：" class="headerlink" title="4）向客户端发送cookie："></a>4）向客户端发送cookie：</h3><p>response.addCookie(cookie);</p>
+<h3 id="5）删除客户端的cookie："><a href="#5）删除客户端的cookie：" class="headerlink" title="5）删除客户端的cookie："></a>5）删除客户端的cookie：</h3><p>如果想删除客户端的已经存储的cookie信息，那么就使用同名同路径的持久化时    间为0的cookie进行覆盖即可</p>
+<h2 id="2．服务器端怎么接受客户端携带的Cookie"><a href="#2．服务器端怎么接受客户端携带的Cookie" class="headerlink" title="2．服务器端怎么接受客户端携带的Cookie"></a>2．服务器端怎么接受客户端携带的Cookie</h2><p><strong>注意：cookie信息是以请求头的方式发送到服务器端的</strong>：</p>
+<h3 id="1）通过request获得所有的Cookie："><a href="#1）通过request获得所有的Cookie：" class="headerlink" title="1）通过request获得所有的Cookie："></a>1）通过request获得所有的Cookie：</h3><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie[] cookies = request.getCookies()<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2）遍历Cookie数组，通过Cookie的名称获得我们想要的Cookie"><a href="#2）遍历Cookie数组，通过Cookie的名称获得我们想要的Cookie" class="headerlink" title="2）遍历Cookie数组，通过Cookie的名称获得我们想要的Cookie"></a>2）遍历Cookie数组，通过Cookie的名称获得我们想要的Cookie</h3><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(Cookie cookie : cookies)&#123;</span><br><span class="line">    <span class="keyword">if</span>(cookie.<span class="built_in">getName</span>().equal(cookieName))&#123;</span><br><span class="line">        <span class="keyword">String</span> cookieValue = cookie.getValue();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="三、Session技术"><a href="#三、Session技术" class="headerlink" title="三、Session技术"></a>三、Session技术</h1><p>Session技术是将数据存储在服务器端的技术，会为每个客户端都创建一块内存空间    存储客户的数据，但客户端需要每次都携带一个标识ID去服务器中寻找属于自己的内    存空间。所以说Session的实现是基于Cookie，Session需要借助于Cookie存储客    户的唯一性标识JSESSIONID</p>
+<p>学习目标：</p>
+<ul>
+<li>怎样获得属于本客户端的session对象（内存区域）？</li>
+<li>怎样向session中存取数据（session也是一个域对象）？</li>
+<li>session对象的生命周期 ？</li>
+</ul>
+<h2 id="1．获得Session对象"><a href="#1．获得Session对象" class="headerlink" title="1．获得Session对象"></a>1．获得Session对象</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">HttpSession session</span> = request.getSession();</span><br></pre></td></tr></table></figure>
+<p>此方法会获得专属于当前会话的Session对象，如果服务器端没有该会话的Session    对象会创建一个新的Session返回，如果已经有了属于该会话的Session直接将已有    的Session返回（实质就是根据JSESSIONID判断该客户端是否在服务器上已经存在    session了，其实第一次客户端没有JSESSIONID）</p>
+<h2 id="2．怎样向session中存取数据（session也是一个域对象）"><a href="#2．怎样向session中存取数据（session也是一个域对象）" class="headerlink" title="2．怎样向session中存取数据（session也是一个域对象）"></a>2．怎样向session中存取数据（session也是一个域对象）</h2><p>Session也是存储数据的区域对象，所以session对象也具有如下三个方法：</p>
 <ol>
-<li>下面这段代码的输出结果？</li>
+<li>session.setAttribute(String name,Object obj);</li>
+<li>session.getAttribute(String name);</li>
+<li>session.removeAttribute(String name);</li>
 </ol>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Test</span> &#123;</span><br><span class="line">    Person person = <span class="keyword">new</span> Person(<span class="string">"Test"</span>);</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"test static"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"test constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> MyClass();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> <span class="title">Person</span>&#123;</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"person static"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span>(<span class="params">String str</span>) </span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"person "</span>+str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="title">extends</span> <span class="title">Test</span> &#123;</span><br><span class="line">    Person person = <span class="keyword">new</span> Person(<span class="string">"MyClass"</span>);</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"myclass static"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyClass</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"myclass constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这段代码的具体执行过程。首先加载Test类，因此会执行Test类中的static块。接着执行new MyClass()，而MyClass类还没有被加载，因此需要加载MyClass类。在加载MyClass类的时候，发现MyClass类继承自Test类，但是由于Test类已经被加载了，所以只需要加载MyClass类，那么就会执行MyClass类的中的static块。在加载完之后，就通过构造器来生成对象。而在生成对象的时候，必须先初始化父类的成员变量，因此会执行Test中的Person person = new Person()，而Person类还没有被加载过，因此会先加载Person类并执行Person类中的static块，接着执行父类的构造器，完成了父类的初始化，然后就来初始化自身了，因此会接着执行MyClass中的Person person = new Person()，最后执行MyClass的构造器。</p>
-<h6 id="输出结果为：-1"><a href="#输出结果为：-1" class="headerlink" title="输出结果为："></a>输出结果为：</h6><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">test </span>static</span><br><span class="line"></span><br><span class="line">myclass static</span><br><span class="line"></span><br><span class="line">person static</span><br><span class="line"></span><br><span class="line">person Test</span><br><span class="line"></span><br><span class="line"><span class="keyword">test </span>constructor</span><br><span class="line"></span><br><span class="line">person MyClass</span><br><span class="line"></span><br><span class="line">myclass constructor</span><br></pre></td></tr></table></figure>
-<p>3.下面这段代码的输出结果？</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Test</span> &#123;</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"test static 1"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"test static 2"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>虽然在main方法中没有任何语句，但是还是会输出。static块可以出现类中的任何地方（只要不是方法内部，记住，任何方法内部都不行），并且执行是按照static块的顺序执行的。</p>
-<h6 id="输出结果："><a href="#输出结果：" class="headerlink" title="输出结果："></a>输出结果：</h6><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">test </span>static 1</span><br><span class="line"><span class="keyword">test </span>static 2</span><br></pre></td></tr></table></figure>
-<h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><h4 id="不带继承关系的类加载过程："><a href="#不带继承关系的类加载过程：" class="headerlink" title="不带继承关系的类加载过程："></a>不带继承关系的类加载过程：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">首先加载类，然后实例化： 加载方法不等于执行方法，初始化变量则会赋值</span><br><span class="line"></span><br><span class="line"> 类加载过程：</span><br><span class="line">          首先加载所有的静态方法，但不执行；</span><br><span class="line">          然后按照静态变量的顺序开始初始化</span><br><span class="line">          静态变量初始化完毕后执行静态构造块（注意是执行）</span><br><span class="line">          此时类加载完毕</span><br><span class="line"> 实例化过程：</span><br><span class="line">          加载非静态方法</span><br><span class="line">          初始化非静态变量</span><br><span class="line">          执行构造代码块</span><br><span class="line">          执行构造函数</span><br><span class="line">          此时实例化完毕</span><br></pre></td></tr></table></figure>
-<h4 id="带继承关系："><a href="#带继承关系：" class="headerlink" title="带继承关系："></a>带继承关系：</h4><p>记住：不管是加载还是实例化，都必须先父类进行，然后才是子类。</p>
+<h2 id="3．Session对象的生命周期（面试题-笔试题）"><a href="#3．Session对象的生命周期（面试题-笔试题）" class="headerlink" title="3．Session对象的生命周期（面试题/笔试题）"></a>3．Session对象的生命周期（面试题/笔试题）</h2><h3 id="创建："><a href="#创建：" class="headerlink" title="创建："></a>创建：</h3><p>第一次执行request.getSession()时创建</p>
+<h3 id="销毁："><a href="#销毁：" class="headerlink" title="销毁："></a>销毁：</h3><p> 1）服务器（非正常）关闭时（两种说法都是对的）</p>
+<p> 2）session过期/失效（默认30分钟）</p>
+<p><strong>问题</strong>：时间的起算点 从何时开始计算30分钟？<br>从不操作服务器端的资源开始计时</p>
+<p>可以在工程的web.xml中进行配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">session-config</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">session-timeout</span>&gt;</span>30<span class="tag">&lt;/<span class="name">session-timeout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">session-config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>3）手动销毁session<br>session.invalidate();</p>
+<h3 id="作用范围："><a href="#作用范围：" class="headerlink" title="作用范围："></a>作用范围：</h3><p>默认在一次会话中，也就是说在，一次会话中任何资源公用一个session对象</p>
+<h1 id="面试题例子："><a href="#面试题例子：" class="headerlink" title="面试题例子："></a>面试题例子：</h1><h4 id="浏览器关闭，session就销毁了？"><a href="#浏览器关闭，session就销毁了？" class="headerlink" title="浏览器关闭，session就销毁了？"></a>浏览器关闭，session就销毁了？</h4><p>不对</p>
+<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p><strong>重点</strong>：整个会话过程的具体过程</p>
+<p>Session</p>
+<h2 id="会话技术："><a href="#会话技术：" class="headerlink" title="会话技术："></a>会话技术：</h2><p>Cookie技术：存到客户端</p>
+<pre><code>发送cookie
+    Cookie cookie = new Cookie(name,value)
+    cookie.setMaxAge(秒)
+    cookie.setPath()
+    response.addCookie(cookie)
+获得cookie
+    Cookie[] cookies = request.getCookies();
+    cookie.getName();
+    cookie.getValue();
+</code></pre><h2 id="Session技术："><a href="#Session技术：" class="headerlink" title="Session技术："></a>Session技术：</h2><p>存到服务器端 ，借助cookie存储JSESSIONID</p>
+<pre><code>HttpSession session = request.getSession();
 
+setAttribute(name,value);
+getAttribute(name);
+
+session生命周期
+    创建：第一次指定request.getSession();
+    销毁：服务器关闭、session失效/过期、手动session.invalidate();
+session作用范围：默认一会话中
+</code></pre>
       
     </div>
     
@@ -487,12 +533,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
-          
-        </div>
-      
 
       
       
@@ -502,8 +542,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/19/Visitor/" rel="next" title="Java设计模式——访问者模式">
-                <i class="fa fa-chevron-left"></i> Java设计模式——访问者模式
+              <a href="/2018/08/03/MergeSort/" rel="next" title="归并排序">
+                <i class="fa fa-chevron-left"></i> 归并排序
               </a>
             
           </div>
@@ -511,10 +551,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/21/Builder/" rel="prev" title="Java设计模式——建造模式">
-                Java设计模式——建造模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -660,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、static关键字的用途"><span class="nav-number">1.</span> <span class="nav-text">一、static关键字的用途</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-静态变量"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.静态变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-静态方法"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.静态方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-静态块"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.静态块</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、常见笔试面试题"><span class="nav-number">2.</span> <span class="nav-text">二、常见笔试面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#输出结果为："><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">输出结果为：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#输出结果为：-1"><span class="nav-number">2.0.0.0.2.</span> <span class="nav-text">输出结果为：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#输出结果："><span class="nav-number">2.0.0.0.3.</span> <span class="nav-text">输出结果：</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、总结"><span class="nav-number">3.</span> <span class="nav-text">三、总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不带继承关系的类加载过程："><span class="nav-number">3.0.1.</span> <span class="nav-text">不带继承关系的类加载过程：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#带继承关系："><span class="nav-number">3.0.2.</span> <span class="nav-text">带继承关系：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、会话技术简介"><span class="nav-number">1.</span> <span class="nav-text">一、会话技术简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1．存储客户端的状态"><span class="nav-number">1.1.</span> <span class="nav-text">1．存储客户端的状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2．会话技术"><span class="nav-number">1.2.</span> <span class="nav-text">2．会话技术</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Cookie技术"><span class="nav-number">2.</span> <span class="nav-text">二、Cookie技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1．服务器端向客户端发送一个Cookie"><span class="nav-number">2.1.</span> <span class="nav-text">1．服务器端向客户端发送一个Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1）创建Cookie："><span class="nav-number">2.1.1.</span> <span class="nav-text">1）创建Cookie：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2）设置Cookie在客户端的持久化时间："><span class="nav-number">2.1.2.</span> <span class="nav-text">2）设置Cookie在客户端的持久化时间：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3）设置Cookie的携带路径："><span class="nav-number">2.1.3.</span> <span class="nav-text">3）设置Cookie的携带路径：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4）向客户端发送cookie："><span class="nav-number">2.1.4.</span> <span class="nav-text">4）向客户端发送cookie：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5）删除客户端的cookie："><span class="nav-number">2.1.5.</span> <span class="nav-text">5）删除客户端的cookie：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2．服务器端怎么接受客户端携带的Cookie"><span class="nav-number">2.2.</span> <span class="nav-text">2．服务器端怎么接受客户端携带的Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1）通过request获得所有的Cookie："><span class="nav-number">2.2.1.</span> <span class="nav-text">1）通过request获得所有的Cookie：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2）遍历Cookie数组，通过Cookie的名称获得我们想要的Cookie"><span class="nav-number">2.2.2.</span> <span class="nav-text">2）遍历Cookie数组，通过Cookie的名称获得我们想要的Cookie</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Session技术"><span class="nav-number">3.</span> <span class="nav-text">三、Session技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1．获得Session对象"><span class="nav-number">3.1.</span> <span class="nav-text">1．获得Session对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2．怎样向session中存取数据（session也是一个域对象）"><span class="nav-number">3.2.</span> <span class="nav-text">2．怎样向session中存取数据（session也是一个域对象）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3．Session对象的生命周期（面试题-笔试题）"><span class="nav-number">3.3.</span> <span class="nav-text">3．Session对象的生命周期（面试题/笔试题）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建："><span class="nav-number">3.3.1.</span> <span class="nav-text">创建：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#销毁："><span class="nav-number">3.3.2.</span> <span class="nav-text">销毁：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用范围："><span class="nav-number">3.3.3.</span> <span class="nav-text">作用范围：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题例子："><span class="nav-number">4.</span> <span class="nav-text">面试题例子：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器关闭，session就销毁了？"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">浏览器关闭，session就销毁了？</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结："><span class="nav-number">5.</span> <span class="nav-text">总结：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#会话技术："><span class="nav-number">5.1.</span> <span class="nav-text">会话技术：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session技术："><span class="nav-number">5.2.</span> <span class="nav-text">Session技术：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -846,9 +882,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://alonec.github.io/2018/05/20/java中的static关键字解析/';
-          this.page.identifier = '2018/05/20/java中的static关键字解析/';
-          this.page.title = 'java中的static关键字解析';
+          this.page.url = 'https://alonec.github.io/2018/08/09/会话技术/';
+          this.page.identifier = '2018/08/09/会话技术/';
+          this.page.title = '会话技术Cookie&Session';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
