@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="陈浮生">
 <meta property="og:description" content="封装，继承及多态。还有重载和重写。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-10T13:28:40.006Z">
+<meta property="og:updated_time" content="2018-08-09T17:42:50.805Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面向对象的三大基本特性">
 <meta name="twitter:description" content="封装，继承及多态。还有重载和重写。">
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  628 字
+                  620 字
                 </span>
               
 
@@ -446,14 +446,14 @@
       
 
       
-        <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>世间一切皆为对象</p>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>世间一切皆为对象</p>
 <p>现实世界中任何实体都可归属于某类事物，任何对象都是某一类事物的实例。</p>
-<h1 id="二、java面向对象的三大基本特性"><a href="#二、java面向对象的三大基本特性" class="headerlink" title="二、java面向对象的三大基本特性"></a>二、java面向对象的三大基本特性</h1><h2 id="1、封装"><a href="#1、封装" class="headerlink" title="1、封装"></a>1、封装</h2><p>封装指的是讲对象内部状态隐藏在对象内部，不允许外部程序直接访对象内部信息，只能通过类提供的方法实现对内部信息的操作访问。</p>
-<h2 id="2、继承"><a href="#2、继承" class="headerlink" title="2、继承"></a>2、继承</h2><p>继承是指一个新的类继承原有类的基本特征，并增加了新的特性。</p>
+<h1 id="java面向对象的三大基本特性"><a href="#java面向对象的三大基本特性" class="headerlink" title="java面向对象的三大基本特性"></a>java面向对象的三大基本特性</h1><h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>封装指的是讲对象内部状态隐藏在对象内部，不允许外部程序直接访对象内部信息，只能通过类提供的方法实现对内部信息的操作访问。</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>继承是指一个新的类继承原有类的基本特征，并增加了新的特性。</p>
 <figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">注意:</span></span><br><span class="line"><span class="comment">Java不允许多继承，而C</span><span class="literal">+</span><span class="literal">+</span><span class="comment">可以。父类的静态方法可以继承，但是不能重写。</span></span><br><span class="line"><span class="comment">父类的私有方法可以继承，只是不能调用。（官方文档说不可继承，但是内存上是继承过来了的）。</span></span><br><span class="line"><span class="comment">个</span></span><br></pre></td></tr></table></figure>
-<h2 id="3、多态"><a href="#3、多态" class="headerlink" title="3、多态"></a>3、多态</h2><p>多态是指允许不同类的对象对同一消息作出响应，即同一消息可以根据发送对象的不同而采用多种不同的行为方式。</p>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>多态是指允许不同类的对象对同一消息作出响应，即同一消息可以根据发送对象的不同而采用多种不同的行为方式。</p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">注意:</span></span><br><span class="line">1）多态存在的三个必要条件</span><br><span class="line">①要有继承 ②要有重写 ③父类引用指向子类对象（向上转型）</span><br><span class="line">2）实现多态性的三种形式</span><br><span class="line">①方法的重载 ②通过继承机制而产生方法覆盖 ③通过接口实现方法覆盖</span><br><span class="line">3）多态的分类</span><br><span class="line">多态分为编译时多态和运行时多态。其中编译时多态是静态的，主要是指方法的重载，它是根据参数列表的不同</span><br><span class="line">来区分不同的函数，通过编译之后会变成两个不同的函数，在运行时谈不上多态。而运行时多态是动态的，它是</span><br><span class="line">通过动态绑定来实现的，也就是我们平常所说的多态性。</span><br></pre></td></tr></table></figure>
-<h2 id="三、重载和重写"><a href="#三、重载和重写" class="headerlink" title="三、重载和重写"></a>三、重载和重写</h2><h2 id="1、重载"><a href="#1、重载" class="headerlink" title="1、重载"></a>1、重载</h2><ul>
+<h2 id="重载和重写"><a href="#重载和重写" class="headerlink" title="重载和重写"></a>重载和重写</h2><h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><ul>
 <li>重载发生在同一个类内的两个或多个方法。</li>
 </ul>
 <p>重载必须满足的条件：</p>
@@ -463,7 +463,7 @@
 <li>参数类型或个数或顺序要不同。</li>
 </ol>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">例如：</span><br><span class="line"><span class="keyword">void</span> <span class="keyword">set</span>(<span class="built_in">int</span> x)		和    <span class="keyword">void</span> <span class="keyword">set</span>(<span class="built_in">int</span> y)不是重载。</span><br></pre></td></tr></table></figure>
-<h2 id="2、重写"><a href="#2、重写" class="headerlink" title="2、重写"></a>2、重写</h2><ul>
+<h2 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h2><ul>
 <li>重写又叫覆盖，发生在父类和子类之间。</li>
 </ul>
 <p>重写必须满足的条件：</p>
@@ -660,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、概述"><span class="nav-number">1.</span> <span class="nav-text">一、概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、java面向对象的三大基本特性"><span class="nav-number">2.</span> <span class="nav-text">二、java面向对象的三大基本特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、封装"><span class="nav-number">2.1.</span> <span class="nav-text">1、封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、继承"><span class="nav-number">2.2.</span> <span class="nav-text">2、继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、多态"><span class="nav-number">2.3.</span> <span class="nav-text">3、多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、重载和重写"><span class="nav-number">2.4.</span> <span class="nav-text">三、重载和重写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1、重载"><span class="nav-number">2.5.</span> <span class="nav-text">1、重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、重写"><span class="nav-number">2.6.</span> <span class="nav-text">2、重写</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java面向对象的三大基本特性"><span class="nav-number">2.</span> <span class="nav-text">java面向对象的三大基本特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#封装"><span class="nav-number">2.1.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">2.2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态"><span class="nav-number">2.3.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重载和重写"><span class="nav-number">2.4.</span> <span class="nav-text">重载和重写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重载"><span class="nav-number">2.5.</span> <span class="nav-text">重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重写"><span class="nav-number">2.6.</span> <span class="nav-text">重写</span></a></li></ol></li></ol></div>
             
 
           </div>
