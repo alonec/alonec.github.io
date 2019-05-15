@@ -6,24 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://alonec.github.io">
-  <title>java设计模式——桥接模式 | 陈浮生</title>
+  <title>IDEA+gradle编译spring源码 | 陈浮生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="将抽象化与实现化脱耦，使得二者可以独立地变化。">
-<meta name="keywords" content="设计模式">
+  <meta name="description" content="IDEA+Gradle4.10+jdk1.8.0_77+spring5.x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java设计模式——桥接模式">
-<meta property="og:url" content="https://alonec.github.io/2018/05/19/设计模式之桥接模式/index.html">
+<meta property="og:title" content="IDEA+gradle编译spring源码">
+<meta property="og:url" content="https://alonec.github.io/2019/05/15/spring源码编译/index.html">
 <meta property="og:site_name" content="陈浮生">
-<meta property="og:description" content="将抽象化与实现化脱耦，使得二者可以独立地变化。">
+<meta property="og:description" content="IDEA+Gradle4.10+jdk1.8.0_77+spring5.x">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/0079rn3gly1frfzopbpx1j30c30cujrr.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/0079rn3gly1frfxjmlh7bj30la0bzmx0.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/0079rn3gly1frfyfj9miuj30rv0ayt93.jpg">
-<meta property="og:updated_time" content="2018-08-09T17:33:11.371Z">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V12FM74536LT02/owYMY*gN9m1jpVAee6CSHFPAAk7Sec*bkwNeW7yrNPU!/b/dFQBAAAAAAAA&bo=ngSDAQAAAAADBzo!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V12FM74536LT02/fvlXyxCwZ19nl2yg6nhRcHqeBvdDB.T*muTsdsulWrw!/b/dL8AAAAAAAAA&bo=IgTaAgAAAAADB9w!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V12FM74536LT02/VXGWCeT9vRg5JJrJS0A5Fma02oh.KoBVjvZaCJzDH2Y!/b/dLgAAAAAAAAA&bo=7gKPAQAAAAADB0A!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V12FM74536LT02/1SR8IgIhrWMJ9XDAewSVzx21APrnuJJx78vFLMqvg3g!/b/dMUAAAAAAAAA&bo=fwUnAwAAAAADB3w!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V12FM74536LT02/P7w.rmUv3Cabu9OG2wTTFvntoqo8TcaBxIlr4u5YTIY!/b/dL8AAAAAAAAA&bo=NgVsAwAAAAADB34!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V12FM74536LT02/vKW.WaDGomBNvC.ucMdssuUXJHvA0t571K0JqKd1erQ!/b/dLYAAAAAAAAA&bo=mQUjAgAAAAADB58!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V12FM74536LT02/2vUVlp7yKeQwRFaf44PUoeQfe8KrkqcuUWGKarz3hJg!/b/dMAAAAAAAAAA&bo=IwWXAQAAAAADF4I!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V12FM74536LT02/S5J.0TZ5ne59NcHPb0kawyWEvHL6gtrQuLB5OJ35NY0!/b/dL8AAAAAAAAA&bo=tATFAgAAAAADF0U!&rf=viewer_4">
+<meta property="og:updated_time" content="2019-05-15T07:16:36.467Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java设计模式——桥接模式">
-<meta name="twitter:description" content="将抽象化与实现化脱耦，使得二者可以独立地变化。">
-<meta name="twitter:image" content="http://wx2.sinaimg.cn/mw690/0079rn3gly1frfzopbpx1j30c30cujrr.jpg">
+<meta name="twitter:title" content="IDEA+gradle编译spring源码">
+<meta name="twitter:description" content="IDEA+Gradle4.10+jdk1.8.0_77+spring5.x">
+<meta name="twitter:image" content="http://m.qpic.cn/psb?/V12FM74536LT02/owYMY*gN9m1jpVAee6CSHFPAAk7Sec*bkwNeW7yrNPU!/b/dFQBAAAAAAAA&bo=ngSDAQAAAAADBzo!&rf=viewer_4">
   
     <link rel="alternative" href="/atom.xml" title="陈浮生" type="application/atom+xml">
   
@@ -147,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-设计模式之桥接模式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-spring源码编译" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      java设计模式——桥接模式
+      IDEA+gradle编译spring源码
     </h1>
   
 
         
-        <a href="/2018/05/19/设计模式之桥接模式/" class="archive-article-date">
-  	<time datetime="2018-05-18T17:11:25.563Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
+        <a href="/2019/05/15/spring源码编译/" class="archive-article-date">
+  	<time datetime="2019-05-15T07:21:40.188Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-15</time>
 </a>
         
       </header>
@@ -169,41 +173,28 @@
 		
 		
 		
-		  <h1 id="场景："><a href="#场景：" class="headerlink" title="场景："></a>场景：</h1><h2 id="商城里的电脑分类问题"><a href="#商城里的电脑分类问题" class="headerlink" title="商城里的电脑分类问题"></a>商城里的电脑分类问题</h2><ul>
-<li>电脑类型：<blockquote>
-<p>台式机、笔记本、平板电脑</p>
-</blockquote>
-</li>
-<li>电脑品牌：<blockquote>
-<p>联想、戴尔、神舟</p>
-</blockquote>
+		  <h1 id="IDEA-gradle编译spring源码"><a href="#IDEA-gradle编译spring源码" class="headerlink" title="IDEA+gradle编译spring源码"></a>IDEA+gradle编译spring源码</h1><p>最近想阅读spring源码，但在过程中遇到了很多坑，虽然网上已经有很多教程，但还是没能避免采坑。故在此想参考着写一篇完整的编译spring教程。</p>
+<h4 id="1，下载gradle，gradle版本需要4-2以上，我这次选择的是gradle4-10版本。"><a href="#1，下载gradle，gradle版本需要4-2以上，我这次选择的是gradle4-10版本。" class="headerlink" title="1，下载gradle，gradle版本需要4.2以上，我这次选择的是gradle4.10版本。"></a>1，下载gradle，gradle版本需要4.2以上，我这次选择的是gradle4.10版本。</h4><p>gradle下载地址：<a href="https://services.gradle.org/distributions" target="_blank" rel="noopener">https://services.gradle.org/distributions</a><br><img src="http://m.qpic.cn/psb?/V12FM74536LT02/owYMY*gN9m1jpVAee6CSHFPAAk7Sec*bkwNeW7yrNPU!/b/dFQBAAAAAAAA&amp;bo=ngSDAQAAAAADBzo!&amp;rf=viewer_4" alt="image"><br>gradle下载后不需要安装，解压再本地磁盘后配置环境变量就行了。（我这里直接将bin路径加入了Path中，你也可以新建一个GRADLE_HOME，path中增加%GRADLE_HOME%/bin;）<br><img src="http://m.qpic.cn/psb?/V12FM74536LT02/fvlXyxCwZ19nl2yg6nhRcHqeBvdDB.T*muTsdsulWrw!/b/dL8AAAAAAAAA&amp;bo=IgTaAgAAAAADB9w!&amp;rf=viewer_4" alt="image"><br>检测gradle是否配置成功，在cmd窗口中输入：gradle -v,显示版本即成功。<br><img src="http://m.qpic.cn/psb?/V12FM74536LT02/VXGWCeT9vRg5JJrJS0A5Fma02oh.KoBVjvZaCJzDH2Y!/b/dLgAAAAAAAAA&amp;bo=7gKPAQAAAAADB0A!&amp;rf=viewer_4" alt="image"></p>
+<h4 id="2，下载spring源码"><a href="#2，下载spring源码" class="headerlink" title="2，下载spring源码"></a>2，下载spring源码</h4><p>github的地址：<a href="https://github.com/spring-projects/spring-framework" target="_blank" rel="noopener">https://github.com/spring-projects/spring-framework</a><br>直接克隆到本地或者下载压缩包(注意选择版本)</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">git</span>@github.com:spring-projects/spring-framework.git</span><br></pre></td></tr></table></figure>
+<p><img src="http://m.qpic.cn/psb?/V12FM74536LT02/1SR8IgIhrWMJ9XDAewSVzx21APrnuJJx78vFLMqvg3g!/b/dMUAAAAAAAAA&amp;bo=fwUnAwAAAAADB3w!&amp;rf=viewer_4" alt="image"></p>
+<h4 id="3，将spring源码导入IDEA进行构建"><a href="#3，将spring源码导入IDEA进行构建" class="headerlink" title="3，将spring源码导入IDEA进行构建"></a>3，将spring源码导入IDEA进行构建</h4><p>直接用IDEA打开spring-framework-5.0.x，然后进入Settings配置gradle<br><img src="http://m.qpic.cn/psb?/V12FM74536LT02/P7w.rmUv3Cabu9OG2wTTFvntoqo8TcaBxIlr4u5YTIY!/b/dL8AAAAAAAAA&amp;bo=NgVsAwAAAAADB34!&amp;rf=viewer_4" alt="image"><br>其中，</p>
+<ul>
+<li>gradle_home是选择我们本地的gradle</li>
+<li>offline work是离线工作，我们需要在线下载依赖，所以不勾选。</li>
+<li>service directory</li>
+<li>path是我们gradle的仓库（类似于maven仓库）</li>
+<li>防止build过程中内存溢出，所以改大了JVM参数：<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-XX:<span class="attribute">MaxPermSize</span>=2048m -Xmx2048m -XX:<span class="attribute">MaxHeapSize</span>=2048m</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="未使用桥接模式时的解决方式"><a href="#未使用桥接模式时的解决方式" class="headerlink" title="未使用桥接模式时的解决方式"></a>未使用桥接模式时的解决方式</h2><blockquote>
-<p>用多层继承结构实现<br><img src="http://wx2.sinaimg.cn/mw690/0079rn3gly1frfzopbpx1j30c30cujrr.jpg" alt="image"></p>
-</blockquote>
-<h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><ol>
-<li>扩展性问题（类膨胀问题）：<blockquote>
-<p>如果要增加一个新的电脑类型：智能手机。则要增加各个品牌下面的类。</p>
-</blockquote>
-</li>
-</ol>
-<blockquote>
-<p>如果要增加一个新的电脑品牌，也要增加各种电脑类型的类。</p>
-<ol>
-<li>违反单一职责原则<br>一个类：联想笔记本，有两个引起这个类型的原因。</li>
-</ol>
-</blockquote>
-<p>#桥接模式</p>
-<h2 id="场景分析（即使用桥接模式的场景）："><a href="#场景分析（即使用桥接模式的场景）：" class="headerlink" title="场景分析（即使用桥接模式的场景）："></a>场景分析（即使用桥接模式的场景）：</h2><blockquote>
-<p>商城系统中常见的商品分类，以电脑为例，如何处理商品分类问题？</p>
-</blockquote>
-<p>分析：这个场景有两个变化的维度：电脑类型、电脑品牌<br><img src="http://wx4.sinaimg.cn/mw690/0079rn3gly1frfxjmlh7bj30la0bzmx0.jpg" alt="image"></p>
-<h2 id="桥接模式的核心要点："><a href="#桥接模式的核心要点：" class="headerlink" title="桥接模式的核心要点："></a>桥接模式的核心要点：</h2><blockquote>
-<p>处理多层继承结构，处理多维度变化的场景。将各个维度设计成独立的继承结构，使各个维度可以独立的扩展，在抽象层建立关联。</p>
-</blockquote>
-<h2 id="类图及代码实现："><a href="#类图及代码实现：" class="headerlink" title="类图及代码实现："></a>类图及代码实现：</h2><p><img src="http://wx3.sinaimg.cn/mw690/0079rn3gly1frfyfj9miuj30rv0ayt93.jpg" alt="image"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 电脑类型基类</span></span><br><span class="line"><span class="comment"> * 抽象构件</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Computer</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> Brand brand;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Computer</span><span class="params">(Brand b)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.brand = b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sale</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		brand.sale();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 台式机电脑</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Desktop</span> <span class="keyword">extends</span> <span class="title">Computer</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Desktop</span><span class="params">(Brand b)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(b);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sale</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.sale();</span><br><span class="line">		System.out.print(<span class="string">"台式电脑"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 笔记本电脑</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Laptop</span> <span class="keyword">extends</span> <span class="title">Computer</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Laptop</span><span class="params">(Brand b)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(b);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sale</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.sale();</span><br><span class="line">		System.out.print(<span class="string">"笔记本电脑"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 电脑品牌接口</span></span><br><span class="line"><span class="comment"> * 实现</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Brand</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">sale</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 联想电脑品牌</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Lenovo</span> <span class="keyword">implements</span> <span class="title">Brand</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sale</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.print(<span class="string">"联想"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 戴尔电脑品牌</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dell</span> <span class="keyword">implements</span> <span class="title">Brand</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sale</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.print(<span class="string">"戴尔"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 客户端</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//销售联想的笔记本电脑</span></span><br><span class="line">		Computer cp = <span class="keyword">new</span> Laptop(<span class="keyword">new</span> Lenovo());</span><br><span class="line">		cp.sale();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4，添加国内镜像，增加下载速度。"><a href="#4，添加国内镜像，增加下载速度。" class="headerlink" title="4，添加国内镜像，增加下载速度。"></a>4，添加国内镜像，增加下载速度。</h4><p>使用阿里云国内镜像<br>对单个项目生效，在项目中的build.gradle修改内容。（注意该文件中有两处repositories，都要修改）</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">repositories</span> &#123;</span><br><span class="line">        <span class="section">maven</span> &#123; <span class="attribute">url</span> <span class="string">'http://maven.aliyun.com/nexus/content/groups/public/'</span> &#125;</span><br><span class="line">        maven&#123; <span class="attribute">url</span> <span class="string">'http://maven.aliyun.com/nexus/content/repositories/jcenter'</span>&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>最后点击finish后进行依赖jar包的下载，这个过程比较漫长，我们最好在一个网络好的地方下载。</p>
+<h4 id="5，编译spring各个模块"><a href="#5，编译spring各个模块" class="headerlink" title="5，编译spring各个模块"></a>5，编译spring各个模块</h4><p>等jar包下载完成后，运行spring-oxm/src/test/java下的test方法进行编译（IDEA会默认编译整个模块），编译成功后会有out文件出现。<br>然后用相同方式依次编译spring-core、spring-context，spring-beans等即可。</p>
+<h4 id="6，编译过程中可能会出现的错误及解决方案"><a href="#6，编译过程中可能会出现的错误及解决方案" class="headerlink" title="6，编译过程中可能会出现的错误及解决方案"></a>6，编译过程中可能会出现的错误及解决方案</h4><p>（1）jdk版本错误（换成对应版本即可）<br><img src="http://m.qpic.cn/psb?/V12FM74536LT02/vKW.WaDGomBNvC.ucMdssuUXJHvA0t571K0JqKd1erQ!/b/dLYAAAAAAAAA&amp;bo=mQUjAgAAAAADB58!&amp;rf=viewer_4" alt="image"></p>
+<p>（2）下载jar包过程中如果出现错误，则点击open file，若是gradle-beans.gradle文件中报错，注释报错的代码集合，再点击刷新继续下载。<br><img src="http://m.qpic.cn/psb?/V12FM74536LT02/2vUVlp7yKeQwRFaf44PUoeQfe8KrkqcuUWGKarz3hJg!/b/dMAAAAAAAAAA&amp;bo=IwWXAQAAAAADF4I!&amp;rf=viewer_4" alt="image"><br>（3）下载过程中可能出现 Connection timed out， 连接超时，可以将gradle仓库内容全删掉，在重新下载即可。（最好再加上阿里云镜像提高下载速度）<br>（4）缺失jar包问题<br>在编译spring-oxm时出现丢失jar包问题。<br><img src="http://m.qpic.cn/psb?/V12FM74536LT02/S5J.0TZ5ne59NcHPb0kawyWEvHL6gtrQuLB5OJ35NY0!/b/dL8AAAAAAAAA&amp;bo=tATFAgAAAAADF0U!&amp;rf=viewer_4" alt="image"><br>解决办法：在Terminal中spring-framework目录下执行gradle genCastor 和 gradle genJaxb 命令即可在Spring-framework\spring-core\build\libs目录下生成jar包。</p>
+<p>在编译spring-core时，也遇到丢失jar包问题。解决办法同上面一样。在spring-oxm目录下执行 gradle objenesisRepackJar 和 gradle cglibRepackJar 命令生成castor和jaxb jar文件。其他的丢失jar包问题参考如上。</p>
+<p>以上内容仅供参考，欢迎大家指出错误，我会及时修正。</p>
 
 		
 	  
@@ -211,24 +202,13 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/设计模式//" class="article-tag-list-link color5">设计模式</a>
+        			<a href="/categories/spring//" class="article-tag-list-link color2">spring</a>
         		</li>
       		
 		</ul>
@@ -283,7 +263,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://alonec.github.io/2018/05/19/设计模式之桥接模式/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://alonec.github.io/2019/05/15/spring源码编译/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -297,18 +277,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/19/设计模式之观察者模式/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          java设计模式——观察者模式
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/18/设计模式之工厂模式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java设计模式——工厂模式</div>
+    <a href="/2018/09/29/设计模式之单例模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java设计模式——单例模式</div>
       <i class="icon-circle-right"></i>
     </a>
   
